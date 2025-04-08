@@ -106,8 +106,8 @@ export const App = () => {
             data-cy="titleInput"
             placeholder="Enter a title"
             value={title}
-            onChange={event => {
-              setTitle(event.target.value);
+            onChange={changeEvent => {
+              setTitle(changeEvent.target.value);
               if (error.title) {
                 setError(prev => ({ ...prev, title: '' }));
               }
@@ -125,8 +125,8 @@ export const App = () => {
           <select
             data-cy="userSelect"
             value={userId}
-            onChange={event => {
-              setUserId(Number(event.target.value) || '');
+            onChange={changeEvent => {
+              setUserId(Number(changeEvent.target.value) || '');
               if (error.user) {
                 setError(prev => ({ ...prev, user: '' }));
               }
